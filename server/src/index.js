@@ -3,6 +3,7 @@ import cors from "cors" // set up rules for comunications (between diff domains)
 import mongoose from "mongoose" // mongodb orm (alow us to write queries in easy way)
 import * as dotenv from 'dotenv';
 import { userRouter } from './routes/users.js'
+import { teachersRouter } from './routes/teachers.js'
 
 
 const app = express(); //genarate a virsion of our api
@@ -13,6 +14,7 @@ app.use(cors()); //
 dotenv.config();
 //apply routers - devide endpoints in given way
 app.use("/auth", userRouter);
+app.use("/teachers", teachersRouter);
 
 //mongodb - Atlas (cloud service) - create db and deploy them
 

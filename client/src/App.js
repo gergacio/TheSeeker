@@ -4,11 +4,13 @@ import { Home } from "./pages/home.js";
 import { Auth } from "./pages/auth.js";
 import { CreateTeacher } from "./pages/create-teacher.js";
 import { SavedTeacher } from "./pages/save-teacher.js";
+import { Navbar } from "./components/navbar.js"
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/auth" element={<Auth />}/>
