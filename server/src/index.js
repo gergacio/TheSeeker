@@ -11,7 +11,7 @@ const app = express(); //genarate a virsion of our api
 app.use(express.json()); //turn data in json
 app.use(cors()); //
 dotenv.config();
-//apply routers
+//apply routers - devide endpoints in given way
 app.use("/auth", userRouter);
 
 //mongodb - Atlas (cloud service) - create db and deploy them
