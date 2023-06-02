@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGetUserID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../hooks/useGetUserID.js";
 import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -12,10 +12,12 @@ export const Home = () => {
 
   const userID = useGetUserID();
 
+  //--------------------------------------------------------
+
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/teachers");
+        const response = await axios.get("http://localhost:3002/teachers");
         setTeachers(response.data);
       } catch (err) {
         console.log(err);
@@ -25,7 +27,7 @@ export const Home = () => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/teachers/savedTeachers/ids/${userID}`
+          `http://localhost:3002/teachers/savedTeachers/ids/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {
@@ -37,24 +39,28 @@ export const Home = () => {
     if(cookies.access_token)  fetchSavedTeachers();
   }, []);
 
-  const savedTeacher = async (teacherID) => {
+//-----------------------------------------------------------------------------
+
+  const saveTeacher = async (teacherID) => {
     try {
-      const response = await axios.put("http://localhost:3001/teachers", {
+      const response = await axios.put("http://localhost:3002/teachers", {
         teacherID,
         userID,
       },
       {headers: {authorization: cookies.access_token}}
       );
-      setSavedTeachers(response.data.savedTeacher);
+      setSavedTeachers(response.data.savedTeachers);
+      console.log(response);
     } catch (err) {
       alert("You need permission to perform this action! Please register for new account and login!");
       navigate("/auth");
       console.log(err);
     }
-  };
+   };
+
+//--------------------------------------------------------------------------------------------
 
   const isTeacherSaved = (id) => savedTeachers.includes(id);
-
 
   return (
     <div className="home" id="home">
@@ -65,18 +71,18 @@ export const Home = () => {
           <li key={teacher._id} className="recipes">
      
               <h2>{teacher.name}</h2>
+            
               <div className="example example-cover">
                  <img src={teacher.image} alt={teacher.name} />
               </div>
               <p>{teacher.place}</p>
-          
-           
-            {/* <p><button className="save-btn"
-                onClick={() => savedTeacher(teacher._id)}
+
+              <p><button className="save-btn"
+                onClick={() => saveTeacher(teacher._id)}
                 disabled={isTeacherSaved(teacher._id)}
               >
                 {isTeacherSaved(teacher._id) ? "Saved" : "Save"}
-              </button></p> */}
+              </button></p>  
           </li>
         ))}
       </ul>

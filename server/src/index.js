@@ -26,7 +26,7 @@ mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-d
 
 //server
 
-app.listen(3001, () => console.log("Server Started!"));
+app.listen(3002, () => console.log("Server Started!"));
 
 
 

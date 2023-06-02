@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useGetUserID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../hooks/useGetUserID.js";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
@@ -22,23 +22,23 @@ export const CreateTeacher = () => {
     setTeacher({ ...teacher, [name]: value });
   };
 
-  const handleQuoteChange = (event, index) => {
-    const { value } = event.target;
-    const quotes = [...teacher.quotes];
-    quotes[index] = value;
-    setTeacher({ ...teacher, quotes });
-  };
+  // const handleQuoteChange = (event, index) => {
+  //   const { value } = event.target;
+  //   const quotes = [...teacher.quotes];
+  //   quotes[index] = value;
+  //   setTeacher({ ...teacher, quotes });
+  // };
 
-  const handleAddQuote = () => {
-    const quotes = [...teacher.quotes, ""];
-    setTeacher({ ...teacher, quotes });
-  };
+  // const handleAddQuote = () => {
+  //   const quotes = [...teacher.quotes, ""];
+  //   setTeacher({ ...teacher, quotes });
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3001/teachers",
+        "http://localhost:3002/teachers",
         { ...teacher },
         {
           headers: { authorization: cookies.access_token },

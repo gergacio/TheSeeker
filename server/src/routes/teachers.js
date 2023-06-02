@@ -45,7 +45,7 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
-// Get a recipe by ID
+// Get a teacher by ID
 router.get("/:teacherId", async (req, res) => {
   try {
     const result = await TeachersModel.findById(req.params.teacherId);
@@ -60,9 +60,9 @@ router.put("/", verifyToken,async (req, res) => {
   const teacher = await TeachersModel.findById(req.body.teacherID);
   const user = await UserModel.findById(req.body.userID);
   try {
-    user.savedTeacher.push(teacher);
+    user.savedTeachers.push(teacher);
     await user.save();
-    res.status(201).json({ savedTeacher: user.savedTeacher });
+    res.status(201).json({ savedTeachers: user.savedTeachers });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -72,7 +72,7 @@ router.put("/", verifyToken,async (req, res) => {
 router.get("/savedTeachers/ids/:userId", async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.userId);
-    res.status(201).json({ savedTeacher: user?.savedTeacher });
+    res.status(201).json({ savedTeachers: user?.savedTeachers });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
