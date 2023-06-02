@@ -26,7 +26,7 @@ export const Navbar = () => {
               <Link to="/create-place">create place</Link>
               <Link to="/saved-place">saved places</Link>
            
-              <button className="nav-btn" onClick={logout}> Logout </button>
+              <button className="button" onClick={logout}> logout </button>
           </>
       
         )}

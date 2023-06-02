@@ -21,12 +21,12 @@ export const SavedPlace = () => {
     fetchSavedTeachers();
   }, []);
   return (
-    <div className="saved-recipes" id="save-recipeId">
+    <div className="search">
       <h1> saved places</h1>
     
       <ul>
         {savedTeachers.map((teacher) => (
-          <li key={teacher._id}>
+          <li className="places" key={teacher._id}>
             <div>
               <h2>{teacher.name}</h2>       
             </div>

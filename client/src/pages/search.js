@@ -64,11 +64,11 @@ export const Search = () => {
 
   return (
 
-    <div className="home" id="home">
+    <div className="search">
     
       <ul >
         {teachers.map((teacher) => (
-          <li key={teacher._id} className="recipes">
+          <li key={teacher._id} className="places">
      
               <h2>{teacher.name}</h2>
             
@@ -77,7 +77,7 @@ export const Search = () => {
               </div>
               <p>{teacher.place}</p>
 
-              <p><button className="save-btn"
+              <p><button className="button"
                 onClick={() => saveTeacher(teacher._id)}
                 disabled={isTeacherSaved(teacher._id)}
               >

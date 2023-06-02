@@ -58,7 +58,7 @@ export const CreatePlace = () => {
 
    
       <div className="create-place">
-      <h2>create place</h2>
+      {/* <h2>create</h2> */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">teacher</label>
         <input
@@ -71,13 +71,14 @@ export const CreatePlace = () => {
         />
 
       <label htmlFor="place">place</label>
-        <textarea
+        <input
+          type="text"
           id="place"
           name="place"
           value={place.place}
           onChange={handleChange}
           required
-        ></textarea>
+        />
 
         {/* <label htmlFor="quotes">quotes</label>
         {teacher.quotes.map((quote, index) => (
@@ -105,7 +106,7 @@ export const CreatePlace = () => {
           required
         />
 
-        <button className="create-btn" type="submit">create place</button>
+        <button className="button" type="submit">create place</button>
       </form>
     </div>
     </div>
