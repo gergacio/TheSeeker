@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID.js";
 import axios from "axios";
 
-export const SavedTeacher = () => {
+export const SavedPlace = () => {
   const [savedTeachers, setSavedTeachers] = useState([]);
   const userID = useGetUserID();
 
@@ -22,7 +22,7 @@ export const SavedTeacher = () => {
   }, []);
   return (
     <div className="saved-recipes" id="save-recipeId">
-      <h1> Saved Teachers</h1>
+      <h1> saved places</h1>
     
       <ul>
         {savedTeachers.map((teacher) => (

@@ -91,25 +91,31 @@ input {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  background-color: black;
+
 }
 
 .navbar a {
-  color: var(--green);
+  color: darkgray;
   text-decoration: none;
 
 }
 .navbar a:hover {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid var(--green);
+  color: lightgray;
+  border-bottom: 1px solid white;
 
 }
 .navbar a:active {
   text-decoration: none;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid white;
+  color: white;
 }
 
-.create-recipe {
+/* pages */
+
+.create-place {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,7 +129,7 @@ input {
   width: 25rem;
   color: var(--burnoak);
 }
-.create-recipe form {
+.create-place form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -146,7 +152,7 @@ input {
   color: var(--burnoak);
 
 }
-.create-recipe:hover {
+.create-place:hover {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -157,6 +163,8 @@ input {
 .create-btn:active {
   background-color: red;
 }
+
+
 /* saved recipes */
 .saved-recipes ul {
 
@@ -305,21 +313,6 @@ input {
   background-color:white;
 
 }
-.logo {
-  margin: 1em 0;
-  text-align: center;
-}
-
-.logo > img {
-  width: 30vw;
-  height: 30vw;
-}
-
-.logo-cover > img {
-  width: 30vw;
-  height: 30vw;
-  object-fit: cover;
-}
 
 .example {
   margin: 1em 0;
@@ -355,6 +348,28 @@ input {
   height: 40vw;
   object-fit: cover;
 }
+
+.create-place-img > img {
+  width: 10vw;
+  height: 10vw;
+}
+.create-place-img-cover > img {
+  width: 30vw;
+  height: 20vw;
+  object-fit: cover;
+}
+
+
+.homediv > img {
+  width: 40vw;
+  height: 40vw;
+}
+.homediv-cover > img {
+  width: 40vw;
+  height: 40vw;
+  object-fit: cover;
+}
+
 
 .saved-recipes {
   /* margin: 1em 0;
@@ -394,20 +409,20 @@ input {
 .nav-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   outline: none;
   color: white;
-  background-color: var(--green);
+  background-color: grey;
   border: none;
   border-radius: .2rem;
   box-shadow: 0 .5rem #999;
 }
 .nav-btn:hover {
 
-  background-color: #4CAF50;
+  background-color: lightgrey;
 }
 .nav-btn:active {
   background-color: red;
@@ -442,4 +457,47 @@ div.logo:hover {
   /* transform: rotate(20deg); */
   transform: skewY(10deg);
 }
+
+
+
+
+.homepage {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 40rem;
+  padding-bottom: 40rem;
+}
+
+.fontfooer {
+  width: 100%;
+  background-color: black;
+  color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+}
+
+.create-places-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+
+
+
 

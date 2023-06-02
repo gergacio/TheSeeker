@@ -4,10 +4,10 @@ import { useGetUserID } from "../hooks/useGetUserID.js";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-export const CreateTeacher = () => {
+export const CreatePlace = () => {
   const userID = useGetUserID();
   const [cookies, _] = useCookies(["access_token"]);
-  const [teacher, setTeacher] = useState({
+  const [place, setPlace] = useState({
     name: "",
     place: "",
     // quotes: [],
@@ -19,7 +19,7 @@ export const CreateTeacher = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setTeacher({ ...teacher, [name]: value });
+    setPlace({ ...place, [name]: value });
   };
 
   // const handleQuoteChange = (event, index) => {
@@ -39,29 +39,33 @@ export const CreateTeacher = () => {
     try {
       await axios.post(
         "http://localhost:3002/teachers",
-        { ...teacher },
+        { ...place },
         {
           headers: { authorization: cookies.access_token },
         }
       );
 
-      alert("Teacher Created");
-      navigate("/");
+      alert("place created");
+      navigate("/search");
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="create-recipe">
-      <h2>Create Teacher</h2>
+    <div className="create-places-container ">
+    
+
+   
+      <div className="create-place">
+      <h2>create place</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">teacher</label>
         <input
           type="text"
           id="name"
           name="name"
-          value={teacher.name}
+          value={place.name}
           onChange={handleChange}
           required
         />
@@ -70,7 +74,7 @@ export const CreateTeacher = () => {
         <textarea
           id="place"
           name="place"
-          value={teacher.place}
+          value={place.place}
           onChange={handleChange}
           required
         ></textarea>
@@ -91,18 +95,20 @@ export const CreateTeacher = () => {
           add quote
         </button> */}
 
-        <label htmlFor="image">Image URL</label>
+        <label htmlFor="image">image url</label>
         <input
           type="text"
           id="image"
           name="image"
-          value={teacher.image}
+          value={place.image}
           onChange={handleChange}
           required
         />
 
-        <button className="create-btn" type="submit">create teacher</button>
+        <button className="create-btn" type="submit">create place</button>
       </form>
     </div>
+    </div>
+
   );
 };
