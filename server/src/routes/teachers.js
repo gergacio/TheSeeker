@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Create a new teacher
+// Create a new place
 router.post("/", verifyToken, async (req, res) => {
   const teacher = new TeachersModel({
     _id: new mongoose.Types.ObjectId(),
@@ -24,6 +24,7 @@ router.post("/", verifyToken, async (req, res) => {
     place: req.body.place,
     // quotes: req.body.quotes,
     image: req.body.image,
+    placeimg: req.body.placeimg,
     userOwner: req.body.userOwner,
   });
   console.log(teacher);

@@ -18,6 +18,11 @@ const teacherSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  placeimg: {
+    type: String,
+    required: true,
+  },
+
   userOwner: { //keep truck user who create teacher
     type: mongoose.Schema.Types.ObjectId,
     ref: "users",
