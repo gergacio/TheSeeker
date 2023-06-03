@@ -59,14 +59,16 @@ export const CreatePlace = () => {
   };
 
   return (
-    <div className="create-places-container ">
-    
 
-    <h1>Create place</h1>
+    <div className="search">
+     <h1>Create Place</h1>
+
       <div className="create-place">
+        
+ 
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Teacher name</label>
+        <label htmlFor="name">Teacher Name</label>
         <input
           type="text"
           id="name"
@@ -87,7 +89,7 @@ export const CreatePlace = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="bio">Known as</label>
+        <label htmlFor="bio">Known As</label>
         <input
           type="text"
           id="bio"
@@ -122,7 +124,7 @@ export const CreatePlace = () => {
           add quote
         </button>
 
-        <label htmlFor="teacherImg">URL teacher image</label>
+        <label htmlFor="teacherImg">URL Teacher Image</label>
         <input
           type="text"
           id="teacherImg"
@@ -140,7 +142,7 @@ export const CreatePlace = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="locationImg">URL location image</label>
+        <label htmlFor="locationImg">URL Location Image</label>
         <input
           type="text"
           id="locationImg"
@@ -168,10 +170,11 @@ export const CreatePlace = () => {
           required
         />
 
-        <button className="button" type="submit">create place</button>
+        <button className="button" type="submit">Create Place</button>
       </form>
     </div>
     </div>
+   
 
   );
 };

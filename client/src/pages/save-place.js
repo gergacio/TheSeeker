@@ -22,7 +22,7 @@ export const SavedPlace = () => {
   }, []);
   return (
     <div className="search">
-      <h1> Saved places</h1>
+      <h1> Saved Places</h1>
     
       <ul>
         {savedTeachers.map((teacher) => (

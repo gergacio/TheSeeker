@@ -17,16 +17,16 @@ export const Navbar = () => {
     <div className="navbar" id="navId">
     
 
-          <Link to="/">home</Link> 
-          <Link to="/search">search</Link>     
+          <Link to="/">Home</Link> 
+          <Link to="/search">Search</Link>     
         {!cookies.access_token ? (
-          <Link to="/auth">login/register</Link>
+          <Link to="/auth">Login/Register</Link>
         ) : (
           <>
-              <Link to="/create-place">create place</Link>
-              <Link to="/saved-place">saved places</Link>
+              <Link to="/create-place">Create Place</Link>
+              <Link to="/saved-place">Saved Places</Link>
            
-              <button className="button" onClick={logout}> logout </button>
+              <button className="button" onClick={logout}> Logout </button>
           </>
       
         )}

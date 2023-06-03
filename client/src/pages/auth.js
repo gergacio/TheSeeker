@@ -53,7 +53,7 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
@@ -63,7 +63,7 @@ const Login = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -72,7 +72,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button className="button" type="submit">Login</button>
       </form>
     </div>
   );
@@ -104,7 +104,7 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <h2>Register</h2>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
@@ -114,7 +114,7 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
@@ -123,7 +123,7 @@ const Register = () => {
             required
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="button" type="submit">Register</button>
       </form>
     </div>
   );
