@@ -5,20 +5,42 @@ const teacherSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  place: {
+  location: {
     type: String,
     required: true,
   },
-  // quotes: {
-  //   type: String,
-  //   required: true,
-  // },
+  continent: {
+    type: String,
+    required: true,
+  },
+  religion: {
+    type: String,
+    required: true,
+  },
+  bio: {
+    type: String,
+    required: true,
+  },
+  selfIdentity: {
+    type: String,
+    required: true,
+  },
+  quotes: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
 
-  image: {
+  teacherImg: {
     type: String,
     required: true,
   },
-  placeimg: {
+  locationImg: {
+    type: String,
+    required: true,
+  },
+  whatToVisit: {
     type: String,
     required: true,
   },

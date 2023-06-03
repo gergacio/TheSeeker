@@ -22,15 +22,28 @@ export const SavedPlace = () => {
   }, []);
   return (
     <div className="search">
-      <h1> saved places</h1>
+      <h1> Saved places</h1>
     
       <ul>
         {savedTeachers.map((teacher) => (
           <li className="places" key={teacher._id}>
-            <div>
-              <h2>{teacher.name}</h2>       
+     
+            <h2>{teacher.name}</h2>    
+            <p>{teacher.whatToVisit}</p>
+            <p>{teacher.location}</p>   
+            <div className="example example-cover">
+                 <img src={teacher.locationImg} alt={teacher.location} />
             </div>
-            <p>{teacher.place}</p>
+            <p>Wisdom Quotes</p>
+            {teacher.quotes.map((quote, index) => {
+                  return (
+                    <p
+                      key={index}
+                    >“{quote}”</p>
+                  );
+                })}
+         
+
            
           </li>
         ))}

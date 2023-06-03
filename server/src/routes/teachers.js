@@ -21,10 +21,16 @@ router.post("/", verifyToken, async (req, res) => {
   const teacher = new TeachersModel({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
-    place: req.body.place,
-    // quotes: req.body.quotes,
-    image: req.body.image,
-    placeimg: req.body.placeimg,
+    location: req.body.location,
+    continent: req.body.continent,
+    religion: req.body.religion,
+    bio: req.body.bio,
+    selfIdentity: req.body.selfIdentity,
+
+    quotes: req.body.quotes,
+    teacherImg: req.body.teacherImg,
+    locationImg: req.body.locationImg,
+    whatToVisit: req.body.whatToVisit,
     userOwner: req.body.userOwner,
   });
   console.log(teacher);
@@ -34,9 +40,16 @@ router.post("/", verifyToken, async (req, res) => {
     res.status(201).json({
       createdTeacher: {
         name: result.name,
-        place: result.place,
-        // quotes: result.quotes,
-        image: result.image,
+        location: result.location,
+        continent: result.continent,
+        religion: result.religion,
+        bio: result.bio,
+        selfIdentity: result.selfIdentity,
+
+        quotes: result.quotes,
+        teacherImg: result.teacherImg,
+        locationImg: result.locationImg,
+        whatToVisit: result.whatToVisit,
         _id: result._id,
       },
     });

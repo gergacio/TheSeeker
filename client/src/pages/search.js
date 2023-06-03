@@ -73,10 +73,24 @@ export const Search = () => {
               <h2>{teacher.name}</h2>
             
               <div className="example example-cover">
-                 <img src={teacher.image} alt={teacher.name} />
+                 <img src={teacher.teacherImg} alt={teacher.name} />
               </div>
-              <p>{teacher.place}</p>
-
+          
+              {/* <p>{teacher.location}</p> */}
+              {/* <p>{teacher.continent}</p> */}
+              {/* <p>{teacher.religion}</p> */}
+              <p>{teacher.bio}</p>
+              <p>“{teacher.selfIdentity}”</p>
+              {/* <p>{teacher.whatToVisit}</p> */}
+        
+                {/* {teacher.quotes.map((quote, index) => {
+                  return (
+                    <p
+                      key={index}
+                    >“{quote}”</p>
+                  );
+                })}
+           */}
               <p><button className="button"
                 onClick={() => saveTeacher(teacher._id)}
                 disabled={isTeacherSaved(teacher._id)}

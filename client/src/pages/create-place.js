@@ -9,9 +9,15 @@ export const CreatePlace = () => {
   const [cookies, _] = useCookies(["access_token"]);
   const [place, setPlace] = useState({
     name: "",
-    place: "",
-    // quotes: [],
-    image: "",
+    location: "",
+    continent: "",
+    religion: "",
+    bio: "",
+    selfIdentity: "",
+    quotes: [],
+    teacherImg: "",
+    locationImg: "",
+    whatToVisit: "",
     userOwner: userID,
   });
 
@@ -22,17 +28,17 @@ export const CreatePlace = () => {
     setPlace({ ...place, [name]: value });
   };
 
-  // const handleQuoteChange = (event, index) => {
-  //   const { value } = event.target;
-  //   const quotes = [...teacher.quotes];
-  //   quotes[index] = value;
-  //   setTeacher({ ...teacher, quotes });
-  // };
+  const handleQuoteChange = (event, index) => {
+    const { value } = event.target;
+    const quotes = [...place.quotes];
+    quotes[index] = value;
+    setPlace({ ...place, quotes });
+  };
 
-  // const handleAddQuote = () => {
-  //   const quotes = [...teacher.quotes, ""];
-  //   setTeacher({ ...teacher, quotes });
-  // };
+  const handleAddQuote = () => {
+    const quotes = [...place.quotes, ""];
+    setPlace({ ...place, quotes });
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -45,7 +51,7 @@ export const CreatePlace = () => {
         }
       );
 
-      alert("place created");
+      alert("Place Created");
       navigate("/search");
     } catch (error) {
       console.error(error);
@@ -56,11 +62,11 @@ export const CreatePlace = () => {
     <div className="create-places-container ">
     
 
-   
+    <h1>Create place</h1>
       <div className="create-place">
-      {/* <h2>create</h2> */}
+
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">teacher</label>
+        <label htmlFor="name">Teacher name</label>
         <input
           type="text"
           id="name"
@@ -70,23 +76,43 @@ export const CreatePlace = () => {
           required
         />
 
-      <label htmlFor="place">place</label>
+
+
+        <label htmlFor="religion">Religion</label>
         <input
           type="text"
-          id="place"
-          name="place"
-          value={place.place}
+          id="religion"
+          name="religion"
+          value={place.religion}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="bio">Known as</label>
+        <input
+          type="text"
+          id="bio"
+          name="bio"
+          value={place.bio}
           onChange={handleChange}
           required
         />
 
-        {/* <label htmlFor="quotes">quotes</label>
-        {teacher.quotes.map((quote, index) => (
+        <label htmlFor="selfIdentity">Self-Identity</label>
+        <input
+          type="text"
+          id="selfIdentity"
+          name="selfIdentity"
+          value={place.selfIdentity}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="quotes">Quotes</label>
+        {place.quotes.map((quote, index) => (
           <input
             key={index}
             type="text"
             name="quotes"
-            className="ingredients"
             value={quote}
             onChange={(event) => handleQuoteChange(event, index)}
             required
@@ -94,14 +120,50 @@ export const CreatePlace = () => {
         ))}
         <button type="button" className="create-btn" onClick={handleAddQuote}>
           add quote
-        </button> */}
+        </button>
 
-        <label htmlFor="image">image url</label>
+        <label htmlFor="teacherImg">URL teacher image</label>
         <input
           type="text"
-          id="image"
-          name="image"
-          value={place.image}
+          id="teacherImg"
+          name="teacherImg"
+          value={place.teacherImg}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="whatToVisit">What to visit</label>
+        <input
+          type="text"
+          id="whatToVisit"
+          name="whatToVisit"
+          value={place.whatToVisit}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="locationImg">URL location image</label>
+        <input
+          type="text"
+          id="locationImg"
+          name="locationImg"
+          value={place.locationImg}
+          onChange={handleChange}
+          required
+        />
+              <label htmlFor="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          value={place.location}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="continent">Continent</label>
+        <input
+          type="text"
+          id="continent"
+          name="continent"
+          value={place.continent}
           onChange={handleChange}
           required
         />
