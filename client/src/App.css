@@ -397,7 +397,6 @@ label {
   background: linear-gradient(to right, #000000 0%, #ffffff 100%);
 }
 .home-p {
-  padding: 1rem;
   font-style: oblique;
   margin-top: 70rem;
   display: flex;
@@ -405,7 +404,7 @@ label {
   justify-content: end;
   align-items: end;
   gap:1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 .home-p:hover {
   color: white;
