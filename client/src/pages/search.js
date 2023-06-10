@@ -78,7 +78,7 @@ export const Search = () => {
               </div>
               <p>{teacher.bio}</p>
            
-              <p>“{teacher.selfIdentity}”</p>
+              <p className="quote">“{teacher.selfIdentity}”</p>
               <p><button className="button"
                 onClick={() => saveTeacher(teacher._id)}
                 disabled={isTeacherSaved(teacher._id)}

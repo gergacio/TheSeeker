@@ -37,7 +37,7 @@ export const SavedPlace = () => {
             <p>Wisdom Quotes</p>
             {teacher.quotes.map((quote, index) => {
                   return (
-                    <p
+                    <p className="quote"
                       key={index}
                     >“{quote}”</p>
                   );

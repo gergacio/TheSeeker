@@ -277,12 +277,14 @@ label {
 .example {
   margin: 1rem 0;
   text-align: center;
+  box-shadow: 10px 10px #454545;
+  
 }
 
 .example > img {
   width: 45vw;
   height: 30vw;
-  box-shadow: 0 .1rem .2rem 0 rgba(255,255,255,255.5);
+
 }
 
 .example-cover > img {
@@ -290,9 +292,22 @@ label {
   height: 30vw;
   object-fit: cover;
 }
+.search h2{
+  color: lightgray;
+  text-shadow: 1px 1px 1px #000000;
+  font-style: oblique;
+}
+.search h1{
+  /* color: whitesmoke; */
+  text-shadow: 1px 1px 1px #000000;
+}
 .search p {
-  width: 35vw;
-  font-size: var(--font-size)
+  width: 45vw;
+  font-size: var(--font-size);
+  /* font-style:oblique; */
+}
+.quote {
+  font-style: italic;
 }
 .imghome {
   margin: 2rem 0;
@@ -326,7 +341,6 @@ label {
   padding: 5rem;
 }
 
-
 .homediv > img {
   width: 50vw;
   height: 50vw;
@@ -336,8 +350,6 @@ label {
   height: 50vw;
   object-fit: cover;
 }
-
-
 
 .homepage {
   width: 100%;
@@ -376,12 +388,25 @@ label {
   padding-bottom: 5rem;
 
 }
-
-
 .gradient {
   height: .2rem;
   width: 100%; 
   background: linear-gradient(to right, #000000 0%, #ffffff 100%);
+}
+.home-p {
+  padding: 1rem;
+  font-style: oblique;
+  margin-top: 70rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  gap:1rem;
+  padding: 1rem;
+}
+.home-p:hover {
+  color: white;
+
 }
 
 
@@ -401,6 +426,6 @@ label {
 
 /* dounov */
 /* garden */
-/* https://beinsadouno-plovdiv.org/all/images/6/Snimki%20Dati,%20praznici%2027.12%20copy.jpg */
+/* https://upload.wikimedia.org/wikipedia/commons/f/fc/Sofia-peter-deunov-grave-5.jpg */
 /* img */
-/* https://beinsadouno.org/wp-content/uploads/2018/02/rila_36_SV-copy.jpg */
+/* https://bb.beinsadouno.org/wp-content/uploads/2018/02/rila_36_SV-copy.jpg */
