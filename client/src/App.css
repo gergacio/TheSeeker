@@ -366,6 +366,7 @@ label {
 .bkg img {
   width: 100%;
   opacity: 0.5;
+
 }
 
 .bkg img:hover {
@@ -386,6 +387,8 @@ label {
 
   padding-top: 10rem;
   padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
 }
 .gradient {
