@@ -6,7 +6,6 @@
 ###
 ###
 ## With the TheSeeker App you can uncover new destinations and map your personal travel goals by keeping track of all spiritual ## places you've been.
-#
 ###
 ###
 ###
