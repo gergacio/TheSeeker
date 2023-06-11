@@ -18,15 +18,22 @@ app.use("/teachers", teachersRouter);
 
 //mongodb - Atlas (cloud service) - create db and deploy them
 
-mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+
+
+  try {
+    await mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  } catch (error) {
+    handleError(error);
+  }
+
 
 
 //server
 
-app.listen(3002, () => console.log("Server Started!"));
+app.listen(3002, () => console.log(`Server running at 3002`));
 
 
 
