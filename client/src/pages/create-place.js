@@ -44,7 +44,7 @@ export const CreatePlace = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3002/teachers",
+        "http://localhost:4000/teachers",
         { ...place },
         {
           headers: { authorization: cookies.access_token },
