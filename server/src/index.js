@@ -18,22 +18,21 @@ app.use("/teachers", teachersRouter);
 
 //mongodb - Atlas (cloud service) - create db and deploy them
 
-
-
-  try {
-    await mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-  } catch (error) {
-    handleError(error);
-  }
+mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully to mongodb");
+});
 
 
 
 //server
 
-app.listen(3002, () => console.log(`Server running at 3002`));
+app.listen(3002, () => console.log("Server running on port 3000!"));
 
 
 
