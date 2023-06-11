@@ -76,7 +76,7 @@ router.put("/", verifyToken,async (req, res) => {
   try {
     user.savedTeachers.push(teacher);
     await user.save();
-    res.status(201).json({ savedTeachers: user?.savedTeachers });
+    res.status(201).json({ savedTeachers: user.savedTeachers });
   } catch (err) {
     res.status(500).json(err);
   }
