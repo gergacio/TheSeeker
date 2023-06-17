@@ -86,7 +86,7 @@ router.put("/", verifyToken,async (req, res) => {
 router.get("/savedTeachers/ids/:userId", async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.userId);
-    res.status(201).json({ savedTeachers: user?.savedTeachers });
+    res.status(201).json({ savedTeachers: user.savedTeachers });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
