@@ -12,12 +12,14 @@ export const Search = () => {
 
   const userID = useGetUserID();
 
+  const url = 'http://18.135.66.226:8080';
+
   //--------------------------------------------------------
 
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/teachers");
+        const response = await axios.get(`${url}/teachers`);
         setTeachers(response.data);
       } catch (err) {
         console.log(err);
@@ -27,7 +29,7 @@ export const Search = () => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/teachers/savedTeachers/ids/${userID}`
+          `${url}/teachers/savedTeachers/ids/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {
@@ -43,7 +45,7 @@ export const Search = () => {
 
   const saveTeacher = async (teacherID) => {
     try {
-      const response = await axios.put("http://localhost:8080/teachers", {
+      const response = await axios.put(`${url}/teachers`, {
         teacherID,
         userID,
       },
