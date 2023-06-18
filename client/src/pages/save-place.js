@@ -10,7 +10,7 @@ export const SavedPlace = () => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/teachers/savedTeachers/${userID}`
+          `http://localhost:8080/teachers/savedTeachers/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {
