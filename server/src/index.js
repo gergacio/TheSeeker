@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 import { userRouter } from './routes/users.js';
 import { teachersRouter } from './routes/teachers.js';
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 
 const app = express(); //genarate a virsion of our api
