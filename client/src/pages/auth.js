@@ -19,6 +19,7 @@ export const Auth = () => {
 };
 //render two components just for current page(we no share them between pages)
 
+const url = 'http://18.135.66.226:8080';
 
 const Login = () => {
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
@@ -33,7 +34,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post("http://localhost:8080/auth/login", {
+      const result = await axios.post(`${url}/auth/login`, {
         username,
         password,
       });
@@ -41,7 +42,7 @@ const Login = () => {
       setCookies("access_token", result.data.token); //get jwt been sent from backend and set to our cookie
       //set respond from api as our cookie
       window.localStorage.setItem("userID", result.data.userID);
-      navigate("/"); //wehn login we ridireted to home page
+      navigate("/search"); //wehn login we ridireted to home page
     } catch (error) {
       
       console.error(error);
@@ -89,7 +90,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:8080/auth/register", {
+      await axios.post(`${url}/auth/register`, {
         username,
         password,
       });

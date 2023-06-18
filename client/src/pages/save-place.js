@@ -6,11 +6,13 @@ export const SavedPlace = () => {
   const [savedTeachers, setSavedTeachers] = useState([]);
   const userID = useGetUserID();
 
+  const url = 'http://18.135.66.226:8080';
+
   useEffect(() => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/teachers/savedTeachers/${userID}`
+          `${url}/teachers/savedTeachers/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {

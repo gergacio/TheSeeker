@@ -18,7 +18,12 @@ dotenv.config();
 
 
 // mongodb - Atlas (cloud service) - create db and deploy them
-mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
+
+
+//server
+
+app.listen(PORT, () => {
+  mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -29,11 +34,6 @@ db.once("open", function () {
 });
 app.use("/auth", userRouter);
 app.use("/teachers", teachersRouter);
-
-
-//server
-
-app.listen(PORT, () => {
 
 
 

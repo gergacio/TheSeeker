@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 
 export const CreatePlace = () => {
   const userID = useGetUserID();
+  const url = 'http://18.135.66.226:8080';
   const [cookies, _] = useCookies(["access_token"]);
   const [place, setPlace] = useState({
     name: "",
@@ -44,7 +45,7 @@ export const CreatePlace = () => {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8080/teachers",
+        `${url}/teachers`,
         { ...place },
         {
           headers: { authorization: cookies.access_token },
