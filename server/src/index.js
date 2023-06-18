@@ -15,27 +15,29 @@ app.use(express.json()); //turn data in json
 app.use(cors()); //
 dotenv.config();
 //apply routers - devide endpoints in given way
+
+
+// mongodb - Atlas (cloud service) - create db and deploy them
+mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully to mongodb");
+});
 app.use("/auth", userRouter);
 app.use("/teachers", teachersRouter);
-
-//mongodb - Atlas (cloud service) - create db and deploy them
 
 
 //server
 
 app.listen(PORT, () => {
-  mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  const db = mongoose.connection;
-  db.on("error", console.error.bind(console, "connection error: "));
-  db.once("open", function () {
-    console.log("Connected successfully");
-  });
 
 
-  console.log("server is running on ", PORT);
+
+  console.log("server is successfully running on ", PORT);
 });
 
 
