@@ -27,9 +27,7 @@
 ## Features
 List the ready features here:
 - Register/Login
-- List of Spiritual Teachers
-- Save Spiritual Teacher.
-- Create Place connected with Spiritual Teacher.
+- Full CRUD on Spiritual Teachers
 
 ## Screenshots
 ![Example screenshot](./screenshots/theseeker_home.png)
@@ -41,7 +39,7 @@ List the ready features here:
 <!-- Proceed to describe how to install / get started with the project. -->
 
 
-<!-- ## Usage -->
+## Usage
 <!-- How does one go about using it? -->
 
 
