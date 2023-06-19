@@ -29,6 +29,7 @@ List the ready features here:
 - Register/Login
 - List of Spiritual Teachers
 - Save Spiritual Teacher.
+- Create Place connected with Spiritual Teacher.
 
 ## Screenshots
 ![Example screenshot](./screenshots/theseeker_home.png)
