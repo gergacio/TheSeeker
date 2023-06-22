@@ -4,6 +4,8 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const BASE_URL = 'http://3.11.115.183:8081';
+
 export const Search = () => {
   const [teachers, setTeachers] = useState([]);
   const [savedTeachers, setSavedTeachers] = useState([]);
@@ -12,14 +14,14 @@ export const Search = () => {
 
   const userID = useGetUserID();
 
-  const url = 'http://18.135.66.226:8080';
+
 
   //--------------------------------------------------------
 
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const response = await axios.get(`${url}/teachers`);
+        const response = await axios.get(`${BASE_URL}/teachers`);
         setTeachers(response.data);
       } catch (err) {
         console.log(err);
@@ -29,7 +31,7 @@ export const Search = () => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `${url}/teachers/savedTeachers/ids/${userID}`
+          `${BASE_URL}/teachers/savedTeachers/ids/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {
@@ -45,7 +47,7 @@ export const Search = () => {
 
   const saveTeacher = async (teacherID) => {
     try {
-      const response = await axios.put(`${url}/teachers`, {
+      const response = await axios.put(`${BASE_URL}/teachers`, {
         teacherID,
         userID,
       },

@@ -4,9 +4,10 @@ import { useGetUserID } from "../hooks/useGetUserID.js";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
+const BASE_URL = 'http://3.11.115.183:8081';
+
 export const CreatePlace = () => {
   const userID = useGetUserID();
-  const url = 'http://18.135.66.226:8080';
   const [cookies, _] = useCookies(["access_token"]);
   const [place, setPlace] = useState({
     name: "",
@@ -45,7 +46,7 @@ export const CreatePlace = () => {
     event.preventDefault();
     try {
       await axios.post(
-        `${url}/teachers`,
+        `${BASE_URL}/teachers`,
         { ...place },
         {
           headers: { authorization: cookies.access_token },

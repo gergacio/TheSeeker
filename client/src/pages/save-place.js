@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useGetUserID } from "../hooks/useGetUserID.js";
 import axios from "axios";
 
+const BASE_URL = 'http://3.11.115.183:8081';
+
 export const SavedPlace = () => {
   const [savedTeachers, setSavedTeachers] = useState([]);
   const userID = useGetUserID();
 
-  const url = 'http://18.135.66.226:8080';
 
   useEffect(() => {
     const fetchSavedTeachers = async () => {
       try {
         const response = await axios.get(
-          `${url}/teachers/savedTeachers/${userID}`
+          `${BASE_URL}/teachers/savedTeachers/${userID}`
         );
         setSavedTeachers(response.data.savedTeachers);
       } catch (err) {
