@@ -19,7 +19,7 @@ export const Auth = () => {
 };
 //render two components just for current page(we no share them between pages)
 
-const url = 'http://18.135.66.226:8080';
+const BASE_URL = 'http://3.11.115.183:8081';
 
 const Login = () => {
   const [_, setCookies] = useCookies(["access_token"]); //get access to func which set the cookie
@@ -34,7 +34,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const result = await axios.post(`${url}/auth/login`, {
+      const result = await axios.post(`${BASE_URL}/auth/login`, {
         username,
         password,
       });
@@ -90,7 +90,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${url}/auth/register`, {
+      await axios.post(`${BASE_URL}/auth/register`, {
         username,
         password,
       });
