@@ -23,7 +23,7 @@ dotenv.config();
 //server
 
 app.listen(PORT, () => {
-  mongoose.connect(`mongodb+srv://ggeorgeuk:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
+  mongoose.connect(`mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASS}@the-seeker-db.j5w682j.mongodb.net/the-seeker-db?retryWrites=true&w=majority`,  {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
